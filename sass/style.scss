@@ -56,6 +56,10 @@ table {
 	margin: 0 auto;
 }
 
+.section-padding {
+	padding: 6em 2em;
+}
+
 // nav
 
 .nav {
@@ -137,6 +141,7 @@ table {
 	overflow: hidden;
 
 	&__text {
+		display: grid;
 		justify-content: center;
 		align-content: center;
 		padding: 2em;
@@ -185,7 +190,152 @@ table {
 	}
 }
 
+// main
+
+.main {
+	.cards {
+		background-color: colors.$darker;
+
+		&__boxes {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			gap: 2em;
+		}
+
+		.card__box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			width: 100%;
+			padding: 3em;
+			background-color: colors.$dark;
+			border-radius: 10px;
+			transition: 0.3s;
+			border: 2px solid transparent;
+
+			&:hover {
+				border: 2px solid colors.$gold;
+				background-color: colors.$darker;
+			}
+
+			i {
+				font-size: 5.2rem;
+				color: colors.$gold;
+			}
+
+			&-title {
+				font-size: 1.8rem;
+				margin-top: 1em;
+				text-transform: uppercase;
+			}
+
+			&-text {
+				font-size: 1.6rem;
+				margin-top: 0.5em;
+				text-align: center;
+			}
+		}
+	}
+
+	.invest {
+		position: relative;
+
+		&__boxes {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: auto repeat(2, 1fr);
+
+			&-title {
+				position: relative;
+				grid-column: 1/3;
+				font-size: 3.2rem;
+				margin-bottom: 2em;
+				font-weight: 200;
+				text-align: center;
+				color: colors.$gold;
+
+				&::before {
+					content: '';
+					position: absolute;
+					width: 50px;
+					height: 3px;
+					background-color: colors.$gold;
+					bottom: -5px;
+				}
+
+				span {
+					font-weight: bold;
+				}
+			}
+		}
+
+		&__box {
+			display: flex;
+			flex-direction: column;
+			grid-column: 1/3;
+			width: 100%;
+
+			&-img {
+				width: 100%;
+				margin-top: 2em;
+				filter: sepia();
+			}
+
+			&-title {
+				margin: 0.5em 0;
+				color: colors.$gold;
+				font-size: 2.6rem;
+				font-weight: 200;
+			}
+
+			&-text {
+				margin-bottom: 0.5em;
+			}
+
+			&-info {
+				color: colors.$gold;
+				font-weight: bold;
+				transition: color 0.2s;
+				align-self: flex-end;
+
+				&:hover {
+					color: colors.$darkgold;
+				}
+			}
+		}
+	}
+}
+
 // media
+
+@media (min-width: 552px) {
+	.main {
+		.invest {
+			&__boxes {
+				&-title {
+					grid-column: 1/2;
+					grid-row: 1/2;
+					align-self: start;
+					margin-bottom: 0;
+					font-size: 3.6rem;
+				}
+			}
+
+			&__box {
+				grid-column: 2/3;
+
+				&:nth-of-type(1) {
+					.invest__box-img {
+						margin-top: 0;
+					}
+				}
+			}
+		}
+	}
+}
 
 @media (min-width: 768px) {
 	.nav-desktop {
@@ -266,6 +416,22 @@ table {
 			left: 3%;
 			width: 20%;
 			animation: rotating-square-two 55s infinite linear;
+		}
+	}
+
+	.main {
+		.cards {
+			&__boxes {
+				flex-direction: row;
+			}
+		}
+
+		.invest {
+			&__boxes {
+				&-title {
+					font-size: 4.8rem;
+				}
+			}
 		}
 	}
 }
