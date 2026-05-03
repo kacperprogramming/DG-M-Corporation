@@ -367,6 +367,50 @@ table {
 .main .gallery img:nth-child(7) {
   display: none;
 }
+.main .contact .form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.main .contact .form__contact-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.main .contact .form__box, .main .contact .form__contact-box {
+  display: flex;
+  flex-direction: column;
+}
+.main .contact .form label {
+  font-size: 1.8rem;
+  margin-bottom: 0.5em;
+}
+.main .contact .form input,
+.main .contact .form textarea {
+  border: 1px solid gray;
+  background: none;
+  padding: 1em 1em;
+  color: #fff;
+}
+.main .contact .form input:focus, .main .contact .form textarea:focus {
+  outline: 1px solid #d6c78e;
+}
+.main .contact .form textarea {
+  min-height: 100px;
+}
+.main .contact .form button {
+  min-width: 100px;
+  width: 30%;
+  padding: 1em 1em;
+  border: 1px solid #d6c78e;
+  background: none;
+  color: #d6c78e;
+  transition: background-color 0.3s;
+}
+.main .contact .form button:hover {
+  background-color: #d6c78e;
+  color: #191919;
+}
 
 @media (min-width: 552px) {
   .main .invest {
@@ -551,6 +595,13 @@ table {
   }
   .main .gallery img:nth-child(7) {
     display: block;
+  }
+  .main .contact .form__contact-boxes {
+    display: flex;
+    flex-direction: row;
+  }
+  .main .contact .form__contact-box {
+    width: 100%;
   }
 }
 @media (min-width: 1200px) {

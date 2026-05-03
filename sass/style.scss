@@ -441,6 +441,62 @@ table {
 			}
 		}
 	}
+
+	.contact {
+		.form {
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+
+			&__contact-boxes {
+				display: flex;
+				flex-direction: column;
+				gap: 1em;
+			}
+
+			&__box,
+			&__contact-box {
+				display: flex;
+				flex-direction: column;
+			}
+
+			label {
+				font-size: 1.8rem;
+				margin-bottom: 0.5em;
+			}
+
+			input,
+			textarea {
+				border: 1px solid gray;
+				background: none;
+				padding: 1em 1em;
+				color: colors.$white;
+			}
+
+			input:focus, textarea:focus {
+				outline: 1px solid colors.$gold;
+			}
+
+			textarea {
+				min-height: 100px;
+			}
+
+			button {
+				min-width: 100px;
+				width: 30%;
+				padding: 1em 1em;
+				border: 1px solid colors.$gold;
+				background: none;
+				color: colors.$gold;
+				transition: background-color .3s;
+			}
+
+			button:hover {
+				background-color: colors.$gold;
+				color: colors.$darker;
+			}
+		}
+	}
 }
 
 // media
@@ -683,6 +739,19 @@ table {
 
 				&:nth-child(7) {
 					display: block;
+				}
+			}
+		}
+
+		.contact {
+			.form {
+				&__contact-boxes {
+					display: flex;
+					flex-direction: row;
+				}
+
+				&__contact-box {
+					width: 100%;
 				}
 			}
 		}
