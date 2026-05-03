@@ -499,6 +499,19 @@ table {
 	}
 }
 
+// footer
+
+.footer {
+	hr {
+		border: 1px solid rgb(57, 57, 57);
+	}
+
+	&__bottom-text {
+		text-align: center;
+		padding: 2em;
+	}
+}
+
 // media
 
 @media (min-width: 552px) {

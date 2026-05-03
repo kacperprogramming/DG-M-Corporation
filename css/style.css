@@ -412,6 +412,14 @@ table {
   color: #191919;
 }
 
+.footer hr {
+  border: 1px solid rgb(57, 57, 57);
+}
+.footer__bottom-text {
+  text-align: center;
+  padding: 2em;
+}
+
 @media (min-width: 552px) {
   .main .invest {
     overflow: hidden;
