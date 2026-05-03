@@ -4,4 +4,4 @@ This is a course project. I built it because I started focusing on a JavaScript 
 
 # Live demo
 
-Check out the live version of this project [here][https://kacperprogramming.github.io/DG-M-Corporation/]
+Check out the live version of this project [here](https://kacperprogramming.github.io/DG-M-Corporation/)
