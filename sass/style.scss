@@ -344,16 +344,16 @@ table {
 		}
 
 		&__box {
-			display: flex;
-			justify-content: center;
+			display: grid;
+			grid-template-rows: repeat(4, 1fr);
+			justify-items: center;
 			align-items: center;
-			flex-direction: column;
 			width: 100%;
 			background-color: colors.$dark;
 			padding: 3em;
 			border-radius: 30px;
 			border: 2px solid transparent;
-			transition: border .3s;
+			transition: border 0.3s;
 
 			&:hover {
 				border: 2px solid colors.$gold;
@@ -381,6 +381,63 @@ table {
 			&-title {
 				font-size: 2.2rem;
 				font-weight: bold;
+			}
+		}
+	}
+
+	.newsletter {
+		background-color: colors.$red;
+
+		&__wrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			gap: 2em;
+
+			.newsletter__text {
+				font-size: 3.2rem;
+				text-align: center;
+			}
+
+			.newsletter__form {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 0.5em;
+				&-input,
+				&-button {
+					padding: 0.5em 1em;
+					border: none;
+				}
+			}
+		}
+	}
+
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+
+		img {
+			height: 300px;
+			width: 100%;
+			object-fit: cover;
+
+			&:nth-child(4) {
+				display: none;
+			}
+
+			&:nth-child(5) {
+				display: none;
+			}
+
+			&:nth-child(6) {
+				display: none;
+			}
+
+			&:nth-child(7) {
+				display: none;
 			}
 		}
 	}
@@ -547,10 +604,10 @@ table {
 
 		.plan {
 			&__box {
-				display: flex;
-				justify-content: space-around;
-				align-items: center;
-				flex-direction: row;
+				display: grid;
+				grid-template-rows: unset;
+				grid-template-columns: repeat(5, 1fr);
+				gap: 2.5em;
 				width: 100%;
 				background-color: colors.$dark;
 				padding: 3em;
@@ -565,6 +622,79 @@ table {
 					margin-bottom: 0;
 				}
 			}
+		}
+
+		.newsletter {
+			&__wrapper {
+				flex-direction: row;
+
+				.newsletter__text {
+					font-size: 3.5rem;
+				}
+
+				.newsletter__form {
+					width: 40%;
+					gap: 1.5em;
+					&-input,
+					&-button {
+						padding: 0.9em 1em;
+						border: none;
+					}
+
+					&-input {
+						width: 70%;
+					}
+
+					&-button {
+						border: 1px solid colors.$gold;
+						background: none;
+						color: colors.$gold;
+						width: 50%;
+						transition:
+							background-color,
+							color 0.3s;
+
+						&:hover {
+							background-color: colors.$gold;
+							color: colors.$red;
+						}
+					}
+				}
+			}
+		}
+
+		.gallery {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+
+			img {
+				&:nth-child(4) {
+					display: block;
+				}
+
+				&:nth-child(5) {
+					display: block;
+				}
+
+				&:nth-child(6) {
+					display: block;
+				}
+
+				&:nth-child(7) {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.main {
+		.gallery {
+			display: grid;
+			grid-template-columns: repeat(8, 1fr);
+			grid-template-rows: unset;
 		}
 	}
 }
